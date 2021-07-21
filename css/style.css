@@ -1,0 +1,412 @@
+/* css for home section*/
+.home{
+  min-height: 100vh;
+  background-image: url("../images/home-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  float: left;
+  width: 100%;
+  padding:0px 15px;
+  position: relative;
+}
+
+.home::before{
+  content: '';
+  position: absolute;
+  left:0;
+  top:0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: #000000;
+  opacity: 0.7;
+}
+/* css for home-text and animation */
+.home .home-text{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  left: auto;
+  z-index: 10;
+}
+/* css for home-text class for h1*/
+.home .home-text h1{
+  font-size:35px;
+  color:#ffffff;
+  margin:10px 0px;
+  font-weight:400;
+  animation: slideLeft 1.5s ease;
+}
+/* css for home-text class for h3*/
+.home .home-text h3{
+  font-size:60px;
+  color:#f3971b;
+  margin:15px 0px 0px;
+  font-weight:700;
+  animation: slideRight 1.5s ease;
+}
+/* animation for home text*/
+@keyframes slideLeft{
+  0%{transform: translateX(-100%);opacity:0}
+  100%{transform: translateX(0);opacity:1}
+}
+@keyframes slideRight{
+  0%{transform: translateX(100%);opacity:0}
+  100%{transform: translateX(0);opacity:1}
+}
+/*Skills section*/
+
+
+.skills{
+	float: left;
+	width: 100%;
+	padding:80px 0px;
+	background-color:#353535;
+}
+/* creating skill content in left side*/
+.skills .skills-content{
+	float: left;
+	width: 100%;
+}
+.skills .skills-content .card{
+	width: 50%;
+	float: left;
+	padding:0px 15px;
+	margin-bottom:50px;
+}
+/* css for progress bar header*/
+.skills .skills-content .card label{
+	font-size:16px;
+	color:#ffffff;
+	font-weight: 600;
+	display: block;
+	text-align: left;
+	margin:15px 0;
+}
+/* css for progress bar*/
+.skills .skills-content .card .progress{
+	height: 10px;
+	width: 100%;
+	border-radius:4px;
+	background-color: #292929;
+   position: relative;
+
+}
+/* css for inside the progress bar*/
+.skills .skills-content .card .progress .inner{
+ position: absolute;
+ left:0;
+ top:0;
+ height: 100%;
+ background-color:#f3971b;
+ border-radius:4px;
+}
+
+
+/*end of skill*/
+/*Service Section*/
+
+.services{
+	float: left;
+	width: 100%;
+	padding:80px 0px;
+	background-color:#353535;
+}
+/* css for content inside service*/
+.services .services-content{
+ width: 100%;
+ float: right;
+}
+/* css for main div in service*/
+.services .services-content .card{
+	width: 33.33%;
+	float: left;
+	padding:15px;
+}
+/* css for sub div of service*/
+.services .services-content .card .box{
+	background-color:#292929;
+	padding:30px;
+	position: relative;
+}
+/* css for hover below the div*/
+.services .services-content .card .box::before{
+	content:'';
+	position: absolute;
+	left:0;
+	bottom:0px;
+	height:3px;
+	width:0;
+	background-color: #f3971b;
+	z-index:1;
+	transition: width .5s ease;
+}
+.services .services-content .card .box:hover::before{
+	width: 100%;
+}
+
+/* css for heading 3 in service*/
+.services .services-content .card .box h3{
+	font-size:20px;
+	color:#ffffff;
+	text-align: center;
+	margin:20px 0 10px;
+	font-weight:600;
+
+}
+/* css for p tag in service*/
+.services .services-content .card .box p{
+	color:#c2c0c3;
+	font-size: 16px;
+	line-height: 25px;
+	letter-spacing:.5px;
+	text-align: center;
+	font-weight: 400;
+
+}
+/* service end*/
+/*Portfolio section*/
+
+
+.portfolio{
+  float: left;
+  width: 100%;
+  padding:80px 0px;
+  background-color:#292929;
+}
+/* css for content in portfolio*/
+.portfolio .portfolio-content{
+  float: left;
+  width: 100%;
+}
+/* css for main div in portfolio*/
+.portfolio .portfolio-content .card{
+  float:left;
+  width: 50%;
+  padding:15px;
+}
+/* css for sub dib in portfolio*/
+.portfolio .portfolio-content .card .box{
+  background-color:#353535;
+  padding:15px;
+  position: relative;
+}
+/* css for hover in portfolio below box*/
+.portfolio .portfolio-content .card .box::before{
+  content:'';
+  position: absolute;
+  left:0;
+  top:0px;
+  height: 3px;
+  width:0;
+  background-color: #f3971b;
+  z-index:1;
+  transition: width .5s ease;
+}
+.portfolio .portfolio-content .card .box:hover::before{
+  width: 100%;
+}
+/* css for heading 3 in portfolio*/
+.portfolio .portfolio-content .card .box h3{
+  margin:0;
+  padding:5px 0 5px;
+  color:#ffffff;
+  font-size:20px;
+  font-weight: 550;
+  letter-spacing:.1px;
+}
+/* css for heading 4 in portfolio*/
+.portfolio .portfolio-content .card .box h4{
+  margin:0;
+  padding:5px 10px 10px;
+  color:#f3971b;
+  font-size:16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing:.5px;
+}
+/*end of portfolio*/
+
+/*blog Section*/
+
+/* css for title in each section */
+h2.title{
+  font-size:30px;
+  font-weight: 600;
+  margin:0;
+  padding-bottom:70px;
+  text-align: center;
+  text-transform: uppercase;
+  color:#f3971b;
+ position: relative;
+ letter-spacing:.5px;
+}
+/* css for line below title of content */
+h2.title::before{
+  content: '';
+  position: absolute;
+  width:80px;
+  height: 2px;
+    left: 50%;
+    margin-left:-40px;
+    top:50px;
+    background-color: #f3971b;
+}
+/* css for blog-content class*/
+.about .about-content{
+  width: 100%;
+  float: left;
+  border: 2px solid  ;
+  box-shadow: 2px 2px 5px 2px #1f1e1e;
+
+  border-color: #3c3c3c;
+  border-radius: 20px;
+}
+#more {
+  display: none;
+}
+/* css for image inside blog-content  */
+.about .about-content .img{
+  float: left;
+  width: 35%;
+  padding:25px;
+}
+.about .about-content .img img{
+  width: 100%;
+  border:5px solid #3c3c3c;
+  border-radius: 10px;
+}
+/* css for blog text  */
+.about .about-content .description{
+  float: left;
+  width: 65%;
+  padding:15px;
+}/* css for heading 4 inside blog*/
+.about .about-content .description h4{
+  font-size:20px;
+  color:#ffffff;
+  margin:0;
+  padding-bottom:10px;
+  font-weight: 400;
+}/* css for headinh 5 inside blog*/
+.about .about-content .description h5{
+  font-size:25px;
+  color:#ffffff;
+  margin:0;
+  padding-bottom:10px;
+  font-weight: 600;
+}/* css for paragraph inside blog */
+.about .about-content .description p{
+  color:#c2c0c3;
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing:.5px;
+  text-align: justify;
+
+  font-weight: 400;
+}/* css for buton inside blog */
+.about .about-content .description p button{
+  margin-right:10px;
+  margin-top:20px;
+}/* css for buton of background orange */
+.btn-bg{
+  padding:12px 40px;
+  border-radius:10px;
+  font-size: 16px;
+  color:#ffffff;
+  font-weight:400;
+  background-color:#f3971b;
+  border:1px solid transparent;
+  letter-spacing:.5px;
+  cursor: pointer;
+  transition:all .5s ease;
+}/* css for hover in button in background orange*/
+.btn-bg:hover{
+border:1px solid #f3971b;
+color:#f3971b;
+background-color:transparent;
+}/* css for buton of background transparent */
+.btn-light{
+  padding:12px 40px;
+  border-radius:10px;
+  font-size: 16px;
+  color:#f3971b;
+  background-color: transparent;
+  font-weight:400;
+  border:1px solid #f3971b;
+  letter-spacing:.5px;
+  cursor: pointer;
+  transition:all .5s ease;
+}/* css for hover in button of transparent */
+.btn-light:hover{
+  color:#ffffff;
+  background-color:#f3971b;
+}
+
+/*end blog*/
+
+/*Contact Section*/
+
+
+.contact{
+	float: left;
+	width: 100%;
+	padding:80px 15px;
+	background-color:#292929;
+
+}
+/* css for content inside contach*/
+.contact .contact-content{
+	margin:auto;
+	max-width:650px;
+	border: 2px solid;
+	border-radius: 10px;
+	background-color: #2e2e2e;
+	border-color: #2e2e2e;
+	border-top: 4px solid transparent;
+  box-shadow: 10px 5px 5px  #1f1e1e;
+
+}
+/* css for input text and  textarea*/
+.contact .contact-content input,
+.contact .contact-content textarea{
+	height:60px;
+    border:none;
+		border-radius: 8px;
+    border-left:2px solid transparent;
+	padding:10px 15px;
+	color:#94a6d1;
+	margin-bottom:30px;
+	font-size:16px;
+	letter-spacing:1px;
+	font-weight:50;
+	display: block;
+	width: 80%;
+	background-color: #292929;
+
+	transition: border, 2s ease;
+
+
+}
+/* css for title in contact section*/
+.contact .contact-content label{
+	color: #f3971b;
+	font-weight:bold;
+	padding: 10px;
+}
+/* css for foucs inside the text box and message*/
+.contact .contact-content input:focus,
+.contact .contact-content textarea:focus{
+ border-color:#f3971b;
+}
+/* css for height of textare in contact section*/
+.contact .contact-content textarea{
+	height: 100px;
+}
+/* css for button of submit in contact section*/
+.contact .contact-content button{
+	display: block;
+	margin:auto;
+}
+/*end contact*/

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+
+
+<style>
+/*ccs for body and outlayer*/
+  html{
+  	scroll-behavior: smooth;
+  }
+  body{
+  	font-family: 'Raleway', sans-serif;
+  	margin:0;
+  }
+
+  *{
+  	box-sizing: border-box;
+  	text-decoration: none;
+  	outline: none;
+  }
+
+  .container{
+  	max-width: 1170px;
+  	margin:auto;
+  }
+  /* css for navigation and logo*/
+  header{
+  	position: fixed;
+  	width:100%;
+  	left:0;
+  	top:0;
+  	padding:10px 15px;
+  	z-index:100;
+
+
+  }
+
+/* css for logo inside header*/
+  header .logo{
+  	float: left;
+  }
+  /* css for logo anchor link*/
+  header .logo a{
+  	font-size:30px;
+  	display: inline-block;
+  	padding:5px 0px;
+  	color:#ffffff;
+  	font-weight:600;
+  	letter-spacing:2px;
+  }
+  /* css for span inside logo*/
+  header .logo a span{
+  	color:#f3971b;
+  }
+  /* css for navigation*/
+  header .navbar{
+  	float: right;
+  }
+  header .navbar ul{
+  	list-style: none;
+  	padding:0;
+  	margin:0;
+  }
+  header .navbar ul li{
+  	display: inline;
+  	padding:0 15px;
+  }
+  header .navbar ul li a{
+  	display: inline-block;
+  	padding:10px 0px;
+  	font-size: 16px;
+  	text-transform: uppercase;
+  	color:#ffffff;
+  	position: relative;
+  }
+  /* css before activity for content present in navbar creating line as hover*/
+  header .navbar ul li a::before{
+  	content:'';
+  	position: absolute;
+  	top:100%;
+  	margin-top:-5px;
+     height: 2px;
+     left:0px;
+     background-color: #f3971b;
+    width:0;
+    transition:width .5s ease;
+  }
+/* hover and active for anchor tag in nav bar*/
+  header .navbar ul li a:hover::before{
+  	width: 100%;
+  }
+
+
+  /*research news section*/
+
+  .blog{
+  	float: left;
+  	width: 100%;
+  	padding:80px 0px;
+  	background-color:#292929;
+  }
+/*css for research-content class*/
+  .blog .blog-content{
+  	float: left;
+  	width: 100%;
+
+  }
+/*css for card class*/
+  .blog .blog-content .card{
+  	float: left;
+  	width: 50%;
+  	padding:15px;
+
+
+  }
+/*css for box class*/
+  .blog .blog-content .card .box{
+  	background-color: #353535;
+  	position: relative;
+  border-radius: 5px;
+  }
+  /*css for box class before content line hover*/
+  .blog .blog-content .card .box::before{
+     content:'';
+  	position: absolute;
+  	left:0;
+  	bottom:0px;
+  	height: 3px;
+  	width:0;
+  	background-color: #f3971b;
+  	z-index:1;
+  	transition: width .5s ease;
+  }/*css for box class hover*/
+  .blog .blog-content .card .box:hover::before{
+  	width: 100%;
+  }
+  /*css for immage inside box class*/
+  .blog .blog-content .card .box img{
+  	width: 100%;
+
+
+  }/*css for heading 4 inside box class*/
+  .blog .blog-content .card .box h4{
+  	margin:0;
+  	padding:15px 15px 5px;
+  	color:#f3971b;
+  	font-size:16px;
+  	font-weight: 700;
+  	text-transform: uppercase;
+  	letter-spacing:.5px;
+  }
+  /*css for heading 3 inside box class*/
+  .blog .blog-content .card .box h3{
+  	margin:0;
+  	padding:10px 15px 10px;
+  	color:#ffffff;
+  	font-size:20px;
+  	font-weight: 600;
+  	letter-spacing:.5px;
+  }
+  /*css for paragraph inside box class*/
+  .blog .blog-content .card .box p{
+  	color:#c2c0c3;
+  	font-size: 16px;
+  	line-height: 25px;
+  	letter-spacing:.5px;
+  	text-align: justify;
+  	font-weight: 400;
+  	padding:0px 15px 15px;
+  	margin:0px;
+  }
+
+
+  /*end of research blog*/
+
+
+/* Popup container - skill button*/
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/*  animation (fade in the popup) in home section */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+/*Footer Section*/
+
+footer{
+	float: left;
+	width: 100%;
+	background-color:#292929;
+	padding:50px 0px;
+}
+/* css for content inside footer*/
+footer .footer-content{
+	float:left;
+	width: 100%;
+
+}
+/* css for Copyright inside footer*/
+footer .copyrignts{
+	float:left;
+	width: 100%;
+	text-align: center;
+	border-top:1px solid #353535;
+	padding-top:15px;
+}
+/* css for location, email, phone humber inside footer*/
+footer .footer-content .box{
+	width:33.33%;
+	float: left;
+	padding:15px;
+	text-align: center;
+}
+footer .footer-content .box .icon span{
+	color:#f3971b;
+	font-size:30px;
+}
+/* css for heading 4 for footer*/
+footer .footer-content .box h4{
+	font-size:16px;
+	color:#ffffff;
+	margin:0;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding:20px 0 0px;
+}
+/* css for p tag for footer*/
+footer .footer-content .box p{
+   color:#c2c0c3;
+	font-size: 16px;
+	line-height: 25px;
+	letter-spacing:.5px;
+
+	font-weight: 400;
+	padding:10px 0;
+	margin:0px;
+}
+/*end of footer*/
+/* css for image inside in research */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* css for image inside heading in research */
+.overlay {
+  position: absolute;
+  top:-20px;
+
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+</style>
+<body>
+  <!-- head, navigation , logo-->
+<header id="hea">
+   <div class="container">
+     <div class="sticky">
+
+       <div class="logo">
+           <a href=""><span>N</span>IMESH</a>
+       </div>
+
+       <div class="navbar">
+           <ul>
+               <li><a href="#home" class="active">Home</a></li>
+               <li><a href="#blog">Blog</a></li>
+               <li><a href="#portfolio">Portfolio</a></li>
+
+               <li><a href="#research">Research</a></li>
+
+
+               <li><a href="#contact">Contact</a></li>
+           </ul>
+       </div>
+   </div>
+ </div>
+</header>
+<!-- End Header -->
+<!-- home section-->
+<section class="home" id="home">
+   <div class="container">
+       <div class="home-text">
+             <h1>Hi, I'm NIMESH POUDEL</h1>
+             <h3>Frontend Developer</h3>
+             <br><br>
+
+             <div class="popup" onmouseover="myFunctin()">
+  <span class="popuptext" id="myPopup">Wanna look my skill click here!</span>
+
+        <a href="#skills" style="color:#ffffff;"><button class="btn-bg" onmouseover="myFunctinn()"> Skills</button></a></div>
+        <script src="js/popup.js"></script>
+        <script>
+        // When the user mouse over on button, open the popup
+        function myFunctinn() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+        </script>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#service" style="color:#ffffff;"><button class="btn-light" >service</button></a>
+
+
+</section>
+<!-- end of home-->
+<!-- Start blog -->
+  <section class="about" id="blog" style="float: left;
+  width: 100%;
+  padding:80px 0px;
+  background-color:#353535;">
+     <div class="container">
+        <h2 class="title">Blog</h2>
+        <div class="about-content">
+            <div class="img">
+         <img src="images/11.jpg" alt="me">
+            </div>
+            <div class="description">
+
+                <center><h5>Technology</h5><p>author:<a href="https://www.facebook.com/7.nimeshpoudel">admin</a>:2020-01-04</p></center>
+                <hr>
+                <!-- blog text-->
+                <p>This is the world of study, research and invention. With the rapidity of life each and every
+                   single day new invention are taking place due to the advancement in technology.
+                   These days we are surrounded by technology and we cannot imagine our life without the technology
+                   . Technology has made our lifestyle easier, simple and comfortable.
+                    It is only due to technology that we are living here we huge facilities and we come across the stone age
+                     to this modern era. The society has dramatically changed with the technology.<br><br>
+Technology is a large area so that it is really hard to explain what the technology exactly means but
+ if we have to then technology is the method of converting the scientific knowledge into practical
+ life and  inventions. We are being provided with the huge number of advantage due to it.
+  Communication world has been changed due to it ,<!--creating readmore or read less. this below part will hide--><span id="dots">...</span><span id="more">  we can the informed about the world  by a single click.
+   Ti has provide easy access to education, heath ,social etc. It has enhance the tourism business globally, made
+   financial transaction easier and also provided great help in banking and agricultural and also in industries
+   with the less effort worker are able to produce huge amount of product.<br><br>
+While focusing on the advantaged we ignore the bad aspect that it has bought to our era .
+Formation of atom and nuclear bomb are effecting the world. Human beings lacks creativity
+ these days as they are completely dependent upon technology .It affect the human being ,life and
+ family ass children are more into video games, parents use to get busy in social sites and stuff that leads to
+  the less time in family .People are falling in bad company due to the cellular and other media.
+   They are engaged in smuggling ,trafficking ,rape and drugs addition by watching social medias which is
+    the gift of social media.<br><br>
+As a conclusion, technology has given us the power to bolster our quickly growing needs keeping in mind
+the end goal to survive but if taken badly it can create more problems than it solves. So we should use the
+technology but wisely focusing on all the restriction and boundaries such a way that it onl,y be beneficial
+and for the shake of development without hampering the family, society and the world. </span></p>
+
+<!-- button for read more and read less-->
+      <button class="btn-bg" onclick="myFunctin()" id="myBtn">Read more</button>
+
+      <script>
+      //when user click read more all text will show in blog section
+      function myFunctin() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more";
+          moreText.style.display = "none";
+        } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less";
+          moreText.style.display = "inline";
+        }
+      }
+      </script>
+            </div>
+
+        </div>
+     </div>
+  </section>
+<!-- End blog -->
+
+
+<!-- Start portfolio -->
+   <section class="portfolio" id="portfolio">
+     <div class="container">
+        <h2 class="title">Portfolio</h2>
+
+        <div class="portfolio-content">
+           <div class="card"><!--creating intoduction box-->
+               <div class="box">
+                   <h3><center>Introduction</center></h3>
+
+                   <h3>Name:</h3><h4> NIMESH POUDEL</h4><h3>Age:</h3><h4>17</h4><h3>Gender:</h3><h4>Male</h4>
+                   <h3>Phone number:</h3><h4>9829332989</h4><h3>Email-</h3><h4>7.nimeshpoudel@gmail.com</h4>
+               </div>
+           </div>
+           <div class="card">
+               <div class="box">
+                   <h3><center>Qualifacation</center></h3>
+                   <br>
+                   <!--creating table for Qualifacation and using in line Css-->
+                  <table  style="width:535px; border-collapse:collapse;">
+                    <tr style=" background-color:rgb(107,1,136)">
+                      <th style="padding:25px; color:orange; font-size:20px;">Level</th>
+                      <th style="color:orange">G.P.A</th>
+                      <th style="color:orange">Passed Year</th>
+                      <th style="color:orange">School/college</th>
+                    </tr>
+                    <tr style="background-color:rgb(192,213,234);">
+                      <td style=" padding:10px;font-size:18px"><center>BSc IT</center></td>
+                      <td style="font-size:18px;"><center>Running</center></td>
+                      <td style="font-size:18px;"><center>Running</center></td>
+                      <td style="font-size:18px;"><center>Islington</center></td>
+
+                    </tr>
+                    <tr style="background-color:rgb(192,213,234);">
+                      <td style=" padding:10px;font-size:18px"><center>+2</center></td>
+                      <td style="font-size:18px;"><center>3.6</center></td>
+                      <td style="font-size:18px;"><center>2019</center></td>
+                      <td style="font-size:18px;"><center>D.p.s</center></td>
+
+                    </tr>
+                    <tr style="background-color:rgb(192,213,234); ">
+                      <td style=" padding:10px;font-size:18px;"><center>SEE</center></td>
+                      <td style="font-size:18px;"><center>3.7</center></td>
+                      <td style="font-size:18px;"><center>2017</center></td>
+                      <td style="font-size:18px;"><center>D.p.s</center</td>
+
+                    </tr>
+                    <tr style=" padding:10px; background-color:rgb(192,213,234);">
+                      <td style=" padding:10px; font-size:18px"><center>D.L.E</center></td>
+                      <td style="font-size:18px"><center>3.5</center></td>
+                      <td style="font-size:18px"><center>2015</center></td>
+                      <td style="font-size:18px"><center>D.p.s</center></td>
+
+                    </tr>
+
+
+
+                  </table>
+               </div>
+           </div>
+           <br><br>
+           <!--creating button for hire me-->
+          <center>  <button class="btn-bg" onclick="myFunction()">HIRE ME</button></center>
+          <p id="hire" style="color:grey"></p><br>
+          <!-- creating skill box-->
+           <div class="card">
+               <div class="box">
+                   <h3><center>Skills<center></h3>
+                     <br>
+                   <h4 ><center>Technical Skill</center></h4>
+                         <ul style="color:#c2c0c3;font-size:17px">
+                           <li>Front-end development</li>
+                           <li>Back-end development</li>
+                          <li> Programming languages:java,python,Vb Studio</li>
+                         </ul>
+                   <hr>
+                    <h4><center>Soft Skill</center></h4>
+                  <ul style="color:#c2c0c3;font-size:17px">  <li>Ability to Work Under Pressure.</li>
+                    <li>Time Management</li>
+                    <li>Team work</li></ul>
+               </div>
+           </div>
+
+
+
+
+           <script>
+           // making to diplay user name and some message while click on button hire me
+           function myFunction() {
+             var txt;
+             var person = prompt("Please enter your name:", "SIR!!");
+             if (person == null || person == "") {
+               txt = "User cancelled the prompt.";
+             } else {
+               txt = "Hello " + person + "! Do you want to hire me? Go To contact section and provide me  details";
+             }
+             document.getElementById("hire").innerHTML = txt;
+           }
+           </script>
+
+
+        </div>
+     </div>
+   </section>
+<!-- End Portfolio -->
+<!-- Start Skills -->
+ <section class="skills" id="skills">
+   <div class="container">
+      <h2 class="title">Skills</h2>
+      <div class="skills-content">
+        <div class="card">
+              <label>Html5</label>
+              <!-- creating progressbar for html-->
+                 <div class="progress" data-text="80%">
+                     <div class="inner"  style="width: 80%">
+                     </div>
+                 </div>
+        </div>
+        <div class="card">
+              <label>Css</label>
+              <!-- creating progressbar for css-->
+                 <div class="progress" data-text="60%">
+                     <div class="inner"  style="width: 60%">
+                     </div>
+                 </div>
+        </div>
+        <div class="card">
+              <label>Javascript</label><!-- creating progressbar for javascript-->
+                 <div class="progress" data-text="90%">
+                     <div class="inner"  style="width: 90%">
+                     </div>
+                 </div>
+        </div>
+        <div class="card">
+              <label>Angular</label><!-- creating progressbar for angular-->
+                 <div class="progress" data-text="40%">
+                     <div class="inner"  style="width: 40%">
+                     </div>
+                 </div>
+        </div>
+        <div class="card">
+              <label>Php</label><!-- creating progressbar for php-->
+                 <div class="progress" data-text="56%">
+                     <div class="inner"  style="width:56%">
+                     </div>
+                 </div>
+        </div>
+        <div class="card">
+              <label>React</label><!-- creating progressbar for react-->
+                 <div class="progress" data-text="78%">
+                     <div class="inner" style="width: 78%">
+                     </div>
+                 </div>
+        </div>
+      </div>
+   </div>
+</section>
+<!-- End Skills -->
+
+<!-- Start research -->
+  <section class="blog" id="research">
+    <div class="container">
+        <h2 class="title">Research</h2>
+        <div class="blog-content">
+<!-- creating research content1 -->
+           <div class="card">
+               <div class="box">
+                 <br>
+                <img src="images/tablew3c.png" class="image"style="padding-left: 10px; padding-right:10px; padding-top:5px;"><hr>
+                <div class="overlay"><a href="https://www.w3schools.com/w3css/w3css_tables.asp" style="color:#f3971b;">w3c School<a/></div>
+                   <p>This table is from w3cschools. it contains only 3 colums and color are green, white and grey. Its fonts
+                   size is a bit smaller. </p>
+
+               </div>
+           </div>
+
+<!-- creating research content1 -->
+           <div class="card">
+               <div class="box">
+                 <br>
+<img src="images/mytable.png" style="padding-left: 10px; padding-right:10px; padding-top:5px;"><hr>
+  <div class="overlay"><a href="" style="color:#ffffff;">Nimesh<a/></div>
+                   <p>This table is from this website. it contains only 4 colums and color are purple, black and.Its fonts
+                   size is a bit bigger than w3cschools</p>
+
+
+               </div>
+           </div>
+           <!-- creating research content2 -->
+           <div class="card">
+                <div class="box">
+                   <br>
+                  <img src="images/contactjava.png"  style="padding-left: 10px; padding-right:10px; padding-top:5px;
+                   height:309px;"><hr>
+                    <div class="overlay"><a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_contact_form"
+                       style="color:#f3971b;">W3cschool<a/></div>
+                      <p>This form is from w3cschools.label,input are in left side and it didn't have border radius
+                      and its color is black,white, grey.it  have select tag.</p> </div>
+
+            </div>
+            <!-- creating research content2 -->
+
+            <div class="card">
+                 <div class="box">
+                     <br>
+                   <img src="images/contactmy.png"  style="padding-left: 10px; padding-right:10px; padding-top:5px;
+                    height:309px;"><hr>
+                     <div class="overlay"><a href="" style="color:#ffffff;">Nimesh<a/></div>
+                       <p>This form is from this website.label,input are in center and it have border radius
+                       and its color is black,orange, white.it didn't have select tag.</p>
+                 </div>
+             </div>
+             <!-- creating research content3 -->
+
+             <div class="card">
+                  <div class="box">
+                    <br>
+                    <img src="images/progressw3c.png"  style="padding-left: 10px; padding-right:10px;
+                     padding-top:5px; height:340px;"><hr>
+                      <div class="overlay"><a href="https://www.w3schools.com/howto/howto_css_skill_bar.asp"
+                        style="color:#f3971b;">w3cschools<a/></div>
+                        <p>This progress bar is from w3cschools. its height are a bit bigger . it used varient color
+                          in progressbar. it didn't have border radius in progress bar
+                           </p>
+
+                  </div>
+              </div>
+              <!-- creating research content3 -->
+
+              <div class="card">
+                   <div class="box">
+                     <br>
+                     <img src="images/myskill.png"  style="padding-left: 10px; padding-right:10px;
+                     padding-top:5px; height:340px;"><hr>
+                       <div class="overlay"><a href="" style="color:#ffffff;">Nimesh<a/></div>
+                         <p>This progress bar is from this website. its height are a smaller bigger . it used same color
+                           in progressbar. it  have border radius in progrss bar.
+                            </p>
+                   </div>
+               </div>
+               <!-- creating research content4 -->
+
+               <div class="card">
+                    <div class="box">
+                      <br>
+                      <img src="images/navben.png"  style="padding-left: 10px; padding-right:10px; padding-top:5px; "><hr>
+                        <div class="overlay"><a href="http://benschmidt.org/" style="color:#f3971b;">Benschmidt<a/></div>
+                          <p> This navigation bar is from benschmidt. in this progress bar it used white color as a
+                            background color
+                          and it remain same in all section .link bar is float at left fide and hover color is blue.</p>
+
+                    </div>
+                </div>
+                <!-- creating research content4 -->
+
+                <div class="card">
+                     <div class="box">
+                       <br>
+                          <img src="images/mynav.png"  style="padding-left: 10px; padding-right:10px; padding-top:5px; ">
+                          <hr>
+                         <div class="overlay"><a href="" style="color:#ffffff;">Nimesh<a/></div>
+                           <p> This navigation bar is from this website. in this navigation bar it didnot used
+                              background at first.
+                           and when windows is scroll down more than 100px its color will change to purple and
+                            it remain same in all section. link bar is float at right fide and hover color is orang
+                            e but it didn't
+                            show hover in text . it shows hover in the bottom of link bar and transition is also appilled
+                          </p>
+                     </div>
+                 </div>
+                 <!-- creating research content5 -->
+
+                 <div class="card">
+                      <div class="box">
+                         <br>
+                        <img src="images/postben.png"  style="padding-left: 10px; padding-right:10px; padding-top:5px; "><hr>
+                          <div class="overlay"><a href="http://benschmidt.org/#posts" style="color:#f3971b;">Benschmidt<a/></div>
+                            <p>This blogs section is from benschmidt. Here with topic with small content is written.
+                               when user want to read more
+                              content the they should click on post and it will redirect to new page where whole conten
+                              t is. it didnot have readmore
+                              button and picure.
+                                                   </p>
+
+                      </div>
+                  </div>
+                  <!-- creating research content5 -->
+
+                  <div class="card">
+                       <div class="box">
+                         <br>
+                         <img src="images/my blog.png"  style="padding-left: 10px; padding-right:10px; padding-top:5px;
+                          "><hr>
+                           <div class="overlay"><a href="" style="color:#ffffff;">Nimesh<a/></div>
+                             <p>This blogs section is from this website. Here with topic with small content is written.
+                               when user want to read more
+                               content the they should click on readmore button and it will show all the content in the
+                               samge page. it
+                               has picure on blog section.
+                                                    </p>
+
+                       </div>
+                   </div>
+
+        </div>
+    </div>
+  </section>
+<!-- End research -->
+
+
+<script>
+//creating navigation bar changing color when it scroll more than 100px
+
+
+  var  nav = document.getElementById('hea');
+
+   window.onscroll = function(){
+
+     if (window.pageYOffset >100) {
+
+       hea.style.background = "#171821";
+       hea.style.boxShadow = "0px 4px 2px #171821";
+     }
+     else{
+       hea.style.background = "transparent";
+       hea.style.boxShadow = "none";
+     }
+   }
+
+
+</script>
+<!-- Start Service -->
+  <section class="services" id="service">
+
+    <div class="container">
+       <h2 class="title">Services</h2>
+       <div class="services-content">
+         <div class="card">
+            <div class="box">
+
+                <h3>Web Development</h3>  <!-- creating service content1 -->
+              <br><br>
+            </div>
+         </div>
+         <div class="card">
+            <div class="box">
+
+                <h3>Responsive Design</h3>  <!-- creating service content2 -->
+              <br><br>
+            </div>
+         </div>
+
+         <div class="card">
+            <div class="box">
+
+                <h3>Creative Design</h3>  <!-- creating service content3 -->
+                <br><br>
+            </div>
+         </div>
+         <div class="card">
+            <div class="box">
+
+                <h3>Clean Code</h3>  <!-- creating service content4 -->
+                <br><br>
+            </div>
+         </div>
+         <div class="card">
+            <div class="box">
+
+                <h3>Fast Support</h3>  <!-- creating service content5 -->
+                <br><br>
+            </div>
+         </div>
+         <div class="card">
+            <div class="box">
+
+                <h3>Branding Identity</h3>  <!-- creating service content6 -->
+              <br><br>
+            </div>
+         </div>
+       </div>
+    </div>
+  </section>
+<!-- End Service -->
+
+<!-- Start Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+       <h2 class="title">Contact Us</h2>
+       <div class="contact-content">
+           <!-- creating  form with js -->
+             <form name="myform" method="post"  onsubmit="return validateform()">
+               <p style=" color:#d3d3d3;">* all are necessary</p>
+
+              <br>
+           <center>  <label for="name"> Full Name</label></center>
+             <center> <input  type="text" placeholder=" Full Name" name="name">  <!-- creating input box  -->
+              <label for="email">Email</label>
+              <input type="text" placeholder="Email" name=email><!-- creating input box  -->
+              <label for="subjecty">Subject</label>
+              <input type="text" placeholder="Subject" name="subject"><!-- creating input box  -->
+              <label for="country">Addrerss</label>
+             <input type="text" placeholder=" Full Address" name="address"><!-- creating input box  -->
+             <label for="phone number">Phone number</label>
+             <input type="text" placeholder="Phone number"name="phno"><!-- creating input box  -->
+            <label for="message">Message</label>
+              <textarea placeholder="Message" name="message"></textarea><!-- creating textarea box  -->
+              <button class="btn-light" value="register">Submit</button><!-- creating button submit for form  -->
+              <br>
+           </form><center>
+       </div>
+    </div>
+  </section>
+
+<script>
+// checking form valitation from js and display is any part is empty or phone number is less than 10 character
+function validateform(){
+var name=document.myform.name.value;
+var email=document.myform.email.value;
+var subject=document.myform.subject.value;
+var address=document.myform.address.value;
+ var phno=document.myform.phno.value;
+var message=document.myform.message.value;
+
+
+
+if (name==null || name==""){
+  alert("Name can't be blank");
+  return false;
+} if(email==null || email==""){
+  alert("email cann't be null ");
+  return false;
+  }
+  if(subject==null || subject==""){
+    alert("Please fill sujbect properly.");
+    return false;
+    }
+
+
+      if(address==null || address==""){
+        alert("Adddress cant be null ");
+        return false;
+        }
+        if (phno.length<10) {
+         alert("Phonumber must be at least 10 characters long.");
+         return false
+       }
+
+    if(message==null || message==""){
+      alert("Message can't be null");
+      return false;
+      }
+
+  else {
+    alert("thank you");
+  }
+}</script>
+<!-- End Contact -->
+<!-- Start Footer -->
+  <footer>
+    <hr>
+     <div class="container">
+         <div class="footer-content">
+             <div class="box">
+
+                 <h4>Phone</h4>
+                 <p>+977 9829332989</p>
+             </div>
+             <div class="box">
+
+                 <h4>Eamil</h4>
+                 <p>7.nimeshpoudel@gmail.com</p>
+             </div>
+             <div class="box">
+
+                 <h4>Location</h4>
+                 <p>Kathmandu Nepal</p>
+             </div>
+         </div>
+<div class="copyrignts">
+   <p style="color:#c2c0c3;">Copyright &copy; 2020 Nimesh Poudel. All rights reserved </p>
+</div>
+     </div>
+  </footer>
+<!-- End Footer -->
